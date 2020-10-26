@@ -44,7 +44,7 @@ def predict():
     if request.method == 'POST':
         message = request.form['message']
         data = [message]
-        vect = vectorizer_bow.fit_transform(data).toarray()
+        vect = vectorizer_bow.transform(data).toarray()
         my_prediction = nb.predict(vect)
     return render_template('result.html',prediction = my_prediction)
 
