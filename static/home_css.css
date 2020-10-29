@@ -1,0 +1,55 @@
+*{
+				margin:0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			body{
+				background-color: black;
+			}
+			img{
+				position: absolute;
+				top:0;
+				right:0;
+				left:0;
+				bottom: 0;
+			}
+			form{
+				position: absolute;
+				background-color: black;
+				opacity: .9;
+				display: block;
+				margin-left: 40%;
+				margin-right: 45%;
+				margin-top: 8%;
+				padding: 25px;
+				color: white;
+				height:450px;
+				width:300px;
+			}
+			h2{
+				text-align: center;
+			}
+			
+			#submit{
+				margin-left: auto;
+				margin-right: auto;
+				border-radius: 5px;
+				padding:7px;
+				display: block;
+			}
+			@media(max-width: 1048px){
+			form{
+				margin-left: 45%;
+				min-width: 300px;
+				margin-top: 15%;
+				}
+			}
+			@media(max-width: 800px){
+			form{
+				margin-left: 15%;
+				width:300px;
+				margin-top: 10%;
+				margin-right: auto;
+				}
+			}
+		
