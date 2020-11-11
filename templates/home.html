@@ -1,33 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Home</title>
+	<style>
+		body{
+			width: 100vw;
+			height: 100vh;
+			background-color: black;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.container h2{
+			text-align: center;
+			text-decoration: underline;
+			text-transform: uppercase;
+			text-shadow:red;
+			color: white;
+			font-size: 50px;
+			margin-top: 10px;
+			letter-spacing: 1.5px;
+		}
+		form p, form textarea{
+			margin: 0 auto;
+			color: white;
+			text-align: center;
+		}
+		form p 
+		{
+		margin-bottom: 20px;
+		color: red;
+		font-size: 35px;
+		font-weight: bolder;
+		}
+		form textarea
+		{
+			background-image: linear-gradient(270deg,lightpink,lightskyblue);
+			opacity: 0.8;
+			font-size: 30px;
+			text-align: justify;
+			color: rgb(226, 32, 32);
+		}
+		form input
+		{
+			margin: 0 auto;
+			display: block;
+			margin-top: 10px;
+			background-color: red;
+			height: 40px;
+			width: 150px;
+			color: white;
+			border-radius: 15px;
+		}
+		.results h2{
+	text-align: center;
+	font-size: 40px;
 	
-	<!--<link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
-	<link rel="stylesheet" type="text/css" href="static\home_css.css">
-	<meta charset="utf-8">
-	<title>Sentiment Analysis Of Tweets</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+}
+
+	</style>
 </head>
 <body>
 
-	<img src="images3.png" width="100%" height="100%">
+	<header>
+		<div class="container">
+		<h2>Sentiments Analaysis</h2>
+	</div>
+	</header>
+	<div class="ml-container">
 		<form action="{{ url_for('predict')}}" method="POST">
-			<h2>Sentiment Analysis Of Tweets</h2>
-		    </br></br>
-			<label for="tweet">
-				Enter the tweet you want to classify
-			     </br>
-			     </br>
+		<p>Enter Your Message Here</p>
+		<textarea name="message" rows="5" cols="60" style="display: block;align-self: center;"></textarea>
+		<input type="submit" class="btn-info" value="predict">
+		
+	</form>
+		
+	</div>
 
-				<textarea name="tweet" id="tweet" cols="30" rows="10" width="200px"></textarea>
-			</label>
-			</br>
-			</br>
-			</br>
-			<input type="submit" value="Predict" id="submit">
-		</form>
-
+	<div class="results">
+		{% if prediction == 1%}
+		<h2 style="color:rgb(175, 18, 18); text-align: center;">Racist</h2>
+		{% elif prediction == 0%}
+		<h2 style="color:blue;text-align: center;"> Not a Racist </h2>
+		{% endif %}
 	
+		</div>
 	
 
 </body>
+</html>
