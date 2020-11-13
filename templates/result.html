@@ -6,6 +6,7 @@
 		body
 		{
 			background-image: url(../static/img/result.jpg);
+			opacity: 0.9;
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
@@ -35,10 +36,7 @@ p
 .results h2{
 	text-align: center;
 	font-size: 40px;
-	margin-top: 10px;
-	
 }
-
 	</style>
 </head>
 <body>
@@ -49,13 +47,19 @@ p
 		
 	</div>
 	</header>
-	<p><b> Results </b></p>
+	<p> <span style="text-align: center;color: white;font-size: 30px;text-decoration: underline; margin-top: 0px; font-weight: bol;"><b>TWEET</b></span> : 
+		<p>
+	<span style="color: black; font-size: 40px;font-weight: bold; margin-top: 0;">	{{ tweet }} </span>
+	</p>
+	</p>
+	<p style="text-align: center;color: white;font-size: 30px;text-decoration: underline; margin-top: 0px; font-weight: bold;"><b> Results </b></p>
 	<br>
+
 	<div class="results">
-	{% if prediction == 1%}
-	<h2 style="color:rgb(175, 18, 18); text-align: center;">Racist</h2>
+	{% if prediction == 1 %}
+	<h2 style="color:black; text-align: center;margin-top: 0px;">Racist</h2>
 	{% elif prediction == 0%}
-	<h2 style="color:blue;text-align: center;"> Not a Racist </h2>
+	<h2 style="color:black;text-align: center; margin-top: 0px;"> Not a Racist </h2>
 	{% endif %}
 
 	</div>
